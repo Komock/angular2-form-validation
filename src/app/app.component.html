@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<div class="form">
+	<ul class="tab-group">
+		<li class="tab"><a routerLink="/" routerLinkActive="active">Sign Up</a></li>
+		<li class="tab"><a routerLink="/log-in">Log In</a></li>
+	</ul>
+	<div class="tab-content">
+		<router-outlet></router-outlet>
+	</div>
+	<!-- tab-content -->
+</div>
+<!-- /form -->
