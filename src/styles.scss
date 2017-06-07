@@ -91,12 +91,21 @@ label .req {
   color: #1ab188;
 }
 
-.field-wrap.active label {
+.field-wrap.active label, .field-wrap.dirty label {
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
   left: 2px;
   font-size: 14px;
 }
+
+input.ng-invalid.ng-dirty {
+	border-color: red;
+}
+
+button[type="submit"]:disabled {
+	background: #485f6d;
+}
+
 label.active .req {
   opacity: 0;
 }

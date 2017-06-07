@@ -24,7 +24,7 @@ export class SignUpComponent implements OnInit {
 	}
 
 	public onSubmit(values: any): void {
-		console.log(values);
+		alert('OK!');
 	}
 
 }

@@ -1,10 +1,18 @@
 import { Directive } from '@angular/core';
+import { FormControl, FormGroup, NG_ASYNC_VALIDATORS, NG_VALIDATORS } from '@angular/forms';
 
 @Directive({
-  selector: '[appEmailValidator]'
+  selector: '[emailValidator]',
+  providers: [
+		{
+			provide: NG_VALIDATORS,
+			useValue: function(control: FormControl): { [key: string]: boolean } {
+				const value: string = control.value || '';
+				const valid: boolean = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i.test(value);
+				return (valid ? null : { nospecial: true });
+			},
+			multi: true
+		}
+	]
 })
-export class EmailValidatorDirective {
-
-  constructor() { }
-
-}
+export class EmailValidatorDirective {}

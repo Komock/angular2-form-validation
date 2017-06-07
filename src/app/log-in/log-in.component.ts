@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordValidatorDirective } from '../password-validator.directive';
 
 @Component({
   selector: 'app-log-in',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent implements OnInit {
+	
+	public formModel: FormGroup;
 
-  constructor() { }
+	constructor(
+		private _fb: FormBuilder
+	) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.formModel = this._fb.group({
+			email: ['', [Validators.required, Validators.minLength(6)]],
+			password: ['', [Validators.required, Validators.minLength(6)]]
+		});
+	}
+
+	public onSubmit(values: any): void {
+		alert('OK!');
+	}
 
 }

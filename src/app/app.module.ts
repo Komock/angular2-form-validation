@@ -34,9 +34,7 @@ import { EmailValidatorDirective } from './email-validator.directive';
       component: LogInComponent
     }])
   ],
-  providers: [
-    
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
