@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PasswordValidatorDirective } from '../password-validator.directive';
 
 @Component({
   selector: 'app-log-in',
