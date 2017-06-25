@@ -2,30 +2,30 @@
 	<h1>Sign Up for Free</h1>
 	<form [formGroup]="formModel" (submit)="onSubmit(formModel.value)">
 		<div class="top-row">
-			<div class="field-wrap">
+			<div class="field-wrap" [ngClass]="inputStateName.wrapperClasses">
 				<label>
 					First Name<span class="req">*</span>
 				</label>
-				<input type="text" formControlName="firstName" inputWraperState>
+				<input type="text" formControlName="firstName" inputWraperState #inputStateName="inputState">
 			</div>
-			<div class="field-wrap">
+			<div class="field-wrap" [ngClass]="inputStateLastName.wrapperClasses">
 				<label>
 					Last Name<span class="req">*</span>
 				</label>
-				<input type="text" formControlName="lastName" inputWraperState>
+				<input type="text" formControlName="lastName" inputWraperState #inputStateLastName="inputState">
 			</div>
 		</div>
-		<div class="field-wrap">
+		<div class="field-wrap" [ngClass]="inputStateMail.wrapperClasses">
 			<label>
 				Email Address<span class="req">*</span>
 			</label>
-			<input type="email" formControlName="email" inputWraperState emailValidator>
+			<input type="email" formControlName="email" inputWraperState emailValidator #inputStateMail="inputState">
 		</div>
-		<div class="field-wrap">
+		<div class="field-wrap" [ngClass]="inputStatePassword.wrapperClasses">
 			<label>
 				Set A Password<span class="req">*</span>
 			</label>
-			<input type="password" formControlName="password" inputWraperState passwordValidator>
+			<input type="password" formControlName="password" inputWraperState passwordValidator #inputStatePassword="inputState">
 		</div>
 		<button type="submit" class="button button-block" [disabled]="!formModel.valid">Get Started</button>
 	</form>

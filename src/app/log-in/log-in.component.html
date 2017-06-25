@@ -1,17 +1,17 @@
 <div id="login">
 	<h1>Welcome Back!</h1>
 	<form [formGroup]="formModel" (submit)="onSubmit(formModel.value)">
-		<div class="field-wrap">
+		<div class="field-wrap" [ngClass]="inputStateMail.wrapperClasses">
 			<label>
 				Email Address<span class="req">*</span>
 			</label>
-			<input type="email" formControlName="email" required inputWraperState emailValidator>
+			<input type="email" formControlName="email" required inputWraperState emailValidator #inputStateMail="inputState">
 		</div>
-		<div class="field-wrap">
+		<div class="field-wrap" [ngClass]="inputStatePassword.wrapperClasses">
 			<label>
 				Password<span class="req">*</span>
 			</label>
-			<input type="password" formControlName="password" required inputWraperState passwordValidator>
+			<input type="password" formControlName="password" required inputWraperState passwordValidator #inputStatePassword="inputState">
 		</div>
 		<!-- <p class="forgot"><a href="#">Forgot Password?</a></p> -->
 		<button class="button button-block" [disabled]="!formModel.valid">Log In</button>
